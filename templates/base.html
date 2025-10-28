@@ -2,21 +2,17 @@
 <html lang="en">
 <head>
     <title>{% block title %}Scary Calculus{% endblock title %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 <body>
 <h1>Arcadia</h1>
+{% include 'navigation.html' %}
 <section>
     <header>
         {% block header %}{% endblock header %}
     </header>
-    {% block nav %}
 
-        <ul id="nav">
-            <li><a href="{% url 'home' %}">Home</a></li>
-            <li><a href="{% url 'main_articles' %}">Articles</a></li>
-        </ul>
-
-    {% endblock nav %}
     <main>
         {% block body %}This is the body{% endblock body %}
     </main>
