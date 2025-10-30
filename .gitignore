@@ -19,3 +19,4 @@ db.sqlite3
 .DS_Store
 .fseventsd
 .Spotlight-V100
+/mysite/secret_key.txt
