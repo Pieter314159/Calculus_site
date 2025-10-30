@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    <article class="post">
+        {% if post.published_date %}
+            <time class="date">
+                {{ article.published_date }}
+            </time>
+        {% endif %}
+        <h2>{{ article.title }}</h2>
+        <p>{{ article.text | linebreaksbr}}</p>
+    <aside class="actions">
+        {% if user.is_authenticated %}
+            <a class="btn btn-secondary" href="{% url 'post_edit' pk=article.pk %}"></a>
+        {% endif %}
+</aside>
+    </article>
+{% endblock body %}
